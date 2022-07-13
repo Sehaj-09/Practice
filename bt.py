@@ -7,16 +7,24 @@ def printTree(root):
     if root == None:
         return
     print(root.data, end= ":")
-    print("L", root.data.left, end=",")
-    print("R", root.data.right)
+    if root.left != None:
+        print("L", root.left.data, end=",")
+    if root.right != None:
+        
+        print("R", root.right.data, end="")
+    print()
     printTree(root.left)
     printTree(root.right)
     
 btn1=Node(1)
 btn2=Node(2)
 btn3=Node(3)
+btn4=Node(4)
+btn5=Node(5)
+
 
 btn1.left=btn2
 btn1.right=btn3
-printTree(btn1)
+btn2.left=btn4
+btn2.right=btn5
     
