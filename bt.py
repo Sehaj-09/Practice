@@ -26,6 +26,13 @@ def treeInput():
     root.left=leftTree
     root.right=rightTree
     return root
+def largestData(root):
+    if root==None:
+        return -1
+    leftLargest=largestData(root.left)
+    rightLargest=largestData(root.right)
+    ans=max(leftLargest,rightLargest,root.data)
+    return ans 
 
 def numNodes(root):
     if root==None:
@@ -35,4 +42,5 @@ def numNodes(root):
     return 1+leftCount+rightCount
 root=treeInput()
 printTree(root)
+print(largestData(root))
 print(numNodes(root))
