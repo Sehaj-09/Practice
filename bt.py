@@ -33,6 +33,12 @@ def largestData(root):
     rightLargest=largestData(root.right)
     ans=max(leftLargest,rightLargest,root.data)
     return ans 
+def numLeafNodes(root):
+    if root.left==None and root.right == None:
+        return 1
+    numLL=numLeafNodes(root.left)
+    numLR=numLeafNodes(root.right)
+    return numLL+numLR
 
 def numNodes(root):
     if root==None:
@@ -43,4 +49,4 @@ def numNodes(root):
 root=treeInput()
 printTree(root)
 print(largestData(root))
-print(numNodes(root))
+print(numLeafNodes(root))
