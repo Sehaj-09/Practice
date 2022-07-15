@@ -34,6 +34,8 @@ def largestData(root):
     ans=max(leftLargest,rightLargest,root.data)
     return ans 
 def numLeafNodes(root):
+    if root==None:
+        return 0
     if root.left==None and root.right == None:
         return 1
     numLL=numLeafNodes(root.left)
